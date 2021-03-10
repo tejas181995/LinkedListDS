@@ -30,5 +30,19 @@ public class LinkedList<T> {
         }
 
     }
+    public void insert(int postion, T data){
+        Node<T> temp = head;
+        if(postion == 0){
+            pushFront(data);
+        }else {
+            for(int i=0; i<postion - 1; i++){
+                temp = temp.next();
+
+            }
+            Node<T> newnode = new Node(data);
+            newnode.link = temp.next();
+            temp.link = newnode;
+        }
+    }
 
 }

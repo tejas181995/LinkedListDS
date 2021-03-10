@@ -5,6 +5,7 @@ public class LinkedListDemo {
         LinkedList<Integer> list= new LinkedList(70);
         list.pushFront(30);
         list.pushFront(56);
+        list.insert(2,10);
         list.printList();
 
     }
