@@ -12,6 +12,13 @@ public class LinkedListDemo {
         System.out.println("-----------------------------------------");
         list.remove(40);
         list.printList();
+        LinkedList<Integer> sortedList = new LinkedList<>(54);
+        sortedList.insertInOrder(45);
+        sortedList.insertInOrder(21);
+        sortedList.insertInOrder(87);
+        System.out.println("-----------------------------------------");
+        sortedList.printList();
+
 
     }
 }

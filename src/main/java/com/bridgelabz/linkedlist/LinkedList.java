@@ -1,14 +1,16 @@
 package com.bridgelabz.linkedlist;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable <T>> {
 
     Node<T> head;
-
+    int count;
     public LinkedList(T data) {
         head = new Node(data);
+        count = 1;
     }
     public LinkedList(){
         this.head = null;
+        count = 0;
     }
 
     public void pushBack(T next){
@@ -16,11 +18,13 @@ public class LinkedList<T> {
         while(temp.hasNext())
             temp = temp.next();
         temp.link = new Node<>(next);
+        count++;
     }
     public void pushFront(T next){
         Node<T> newNode = new Node<>(next);
         newNode.link = head;
         head = newNode;
+        count++;
     }
     public void printList(){
         Node<T> temp = head;
@@ -43,11 +47,14 @@ public class LinkedList<T> {
             newnode.link = temp.next();
             temp.link = newnode;
         }
+        count++;
     }
     public T pop(){
         T val = head.data;
         head = head.next() ;
+        count--;
         return val;
+
     }
     public T popLast(){
         Node<T> secondLast = head;
@@ -57,7 +64,9 @@ public class LinkedList<T> {
             last = last.next();
         }
         secondLast.link = null;
+        count--;
         return last.data;
+
     }
     public int indexOf(T data){
         Node<T> temp = head;
@@ -80,7 +89,19 @@ public class LinkedList<T> {
         }
         if(last != null && last.data == data){
             secondLast.link = last.link;
+            count--;
+
         }
+    }
+    public void insertInOrder(T data){
+        Node<T> temp = head;
+        for(int i=0; i<count; i++){
+            if(temp.data.compareTo(data) > 0){
+                insert(i, data);
+                return;
+            }
+        }
+        pushBack(data);
     }
 
 }
