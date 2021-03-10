@@ -11,6 +11,7 @@ public class LinkedListDemo {
 //        System.out.println("val: " + val)
         int val = list.popLast();
         System.out.println("last pop: " + val);
+        System.out.println( list.indexOf(70));
         list.printList();
 
     }

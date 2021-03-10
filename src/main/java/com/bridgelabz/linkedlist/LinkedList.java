@@ -59,5 +59,17 @@ public class LinkedList<T> {
         secondLast.link = null;
         return last.data;
     }
+    public int indexOf(T data){
+        Node<T> temp = head;
+        int i = 0;
+        while(temp != null){
+            if(data == temp.data){
+                return i;
+            }
+            temp = temp.next();
+            i++;
+        }
+        return -1;
+    }
 
 }
