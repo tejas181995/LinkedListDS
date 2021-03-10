@@ -44,5 +44,10 @@ public class LinkedList<T> {
             temp.link = newnode;
         }
     }
+    public T pop(){
+        T val = head.data;
+        head = head.next() ;
+        return val;
+    }
 
 }
