@@ -9,7 +9,7 @@ public class Node<T> {
         this.link=null;
     }
     public boolean hasNext(){
-        return this.link == null;
+        return this.link != null;
     }
     public Node next(){
         return this.link;

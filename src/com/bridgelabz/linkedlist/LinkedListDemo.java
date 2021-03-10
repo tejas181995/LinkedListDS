@@ -5,10 +5,12 @@ public class LinkedListDemo {
         LinkedList<Integer> list= new LinkedList(30);
         list.pushFront(70);
         list.pushFront(56);
-        //list.insert(2,10);
-        //list.printList();
-        Integer val = list.pop();
-        System.out.println("val: " + val);
+//        list.insert(2,10);
+//        list.printList();
+//        Integer val = list.pop();
+//        System.out.println("val: " + val)
+        int val = list.popLast();
+        System.out.println("last pop: " + val);
         list.printList();
 
     }
