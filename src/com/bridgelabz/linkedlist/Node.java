@@ -8,4 +8,10 @@ public class Node<T> {
         this.data = data;
         this.link=null;
     }
+    public boolean hasNext(){
+        return this.link == null;
+    }
+    public Node next(){
+        return this.link;
+    }
 }

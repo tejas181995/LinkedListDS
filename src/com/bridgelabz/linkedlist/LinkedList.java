@@ -13,8 +13,8 @@ public class LinkedList<T> {
 
     public void pushBack(T next){
         Node<T> temp = head;
-        while(temp.link != null)
-            temp = temp.link;
+        while(temp.hasNext())
+            temp = temp.next();
         temp.link = new Node<>(next);
     }
     public void pushFront(T next){
@@ -26,7 +26,7 @@ public class LinkedList<T> {
         Node<T> temp = head;
         while(temp != null){
             System.out.println(temp.data);
-            temp = temp.link;
+            temp = temp.next();
         }
 
     }
