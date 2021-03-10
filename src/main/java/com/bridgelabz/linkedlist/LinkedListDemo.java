@@ -6,7 +6,11 @@ public class LinkedListDemo {
         list.pushBack(30);
         list.pushBack(70);
         list.printList();
+        System.out.println("-----------------------------------");
         list.insert(2, 40);
+        list.printList();
+        System.out.println("-----------------------------------------");
+        list.remove(40);
         list.printList();
 
     }

@@ -71,5 +71,16 @@ public class LinkedList<T> {
         }
         return -1;
     }
+    public void remove(T data){
+        Node<T> secondLast = head;
+        Node<T> last = head;
+        while(last.data != data){
+            secondLast = last;
+            last = last.next();
+        }
+        if(last != null && last.data == data){
+            secondLast.link = last.link;
+        }
+    }
 
 }
